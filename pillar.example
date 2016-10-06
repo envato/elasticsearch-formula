@@ -131,3 +131,7 @@ elasticsearch:
         indices:
           - names: '.marvel-es-*'
             privileges: [ "all" ]
+
+    users:
+      - username: herpa_derpa
+        password_hash: $2b$12$wmCmWgpLZaF6WbuSKLW5QuMEsUGkRizmyEpkLNmduV9LZx1hr/Zte

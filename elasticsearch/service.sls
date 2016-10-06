@@ -12,5 +12,6 @@ elasticsearch_service:
       - file: elasticsearch_shield_logging_cfg
       - file: elasticsearch_shield_role_mapping_cfg
       - file: elasticsearch_shield_roles_cfg
+      - file: elasticsearch_shield_users_cfg
     - require:
       - sls: elasticsearch.pkg

@@ -27,3 +27,12 @@ elasticsearch_shield_roles_cfg:
     - user: root 
     - require:
       - sls: elasticsearch.pkg
+
+elasticsearch_shield_users_cfg:
+  file.managed:
+    - name: /etc/elasticsearch/shield/users
+    - source: salt://elasticsearch/files/shield/users
+    - template: jinja
+    - user: root
+    - require:
+      - sls: elasticsearch.plugins
