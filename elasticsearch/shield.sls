@@ -8,7 +8,7 @@ elasticsearch_shield_logging_cfg:
     - template: jinja 
     - user: root 
     - require: 
-      - sls: elasticsearch.pkg 
+      - sls: elasticsearch.plugins
 
 elasticsearch_shield_role_mapping_cfg:
   file.managed:
@@ -17,7 +17,7 @@ elasticsearch_shield_role_mapping_cfg:
     - template: jinja
     - user: root 
     - require:
-      - sls: elasticsearch.pkg
+      - sls: elasticsearch.plugins
 
 elasticsearch_shield_roles_cfg:
   file.managed:
@@ -26,7 +26,7 @@ elasticsearch_shield_roles_cfg:
     - template: jinja
     - user: root 
     - require:
-      - sls: elasticsearch.pkg
+      - sls: elasticsearch.plugins
 
 elasticsearch_shield_users_cfg:
   file.managed:
