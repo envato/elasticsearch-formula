@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: 'mkdir -p /srv/pillar'
   config.vm.provision :shell, inline: 'cp /srv/salt/vagrant/top.sls /srv/pillar/top.sls'
   config.vm.provision :shell, inline: 'cp /srv/salt/vagrant/top.sls /srv/salt/top.sls'
-  config.vm.provision :shell, inline: 'ln -s /srv/salt/pillar.example /srv/pillar/elasticsearch.sls'
+  config.vm.provision :shell, inline: '[[ -a /srv/salt/pillar.example ]] || ln -s /srv/salt/pillar.example /srv/pillar/elasticsearch.sls'
   config.vm.provision :salt do |salt|
     salt.masterless = true
     salt.run_highstate = true
