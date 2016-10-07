@@ -8,4 +8,17 @@
         },
     }),
     'config': {},
+    'shield': {},
+}, merge=True) %}
+{% set java = salt['pillar.get']('elasticsearch', {
+    'lookup': salt['grains.filter_by']({
+        'Debian': {
+            'pkg': 'openjdk-7-jre-headless',
+        },
+        'RedHat': {
+            'pkg': 'java-1.7.0-openjdk',
+        },
+    }),
+    'config': {},
+    'shield': {},
 }, merge=True) %}
